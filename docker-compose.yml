@@ -5,7 +5,7 @@ services:
         ports:
           - 8080:80
         volumes:
-          - ./cm:/var/www/html/cm
+          - ./cm:/var/www/html/phpClassManager
       db:
         image: mysql:5.7
         volumes:
@@ -13,7 +13,7 @@ services:
         ports:
           - 3306:3306
         environment:
-          - MYSQL_ROOT_PASSWORD=ciava
+          - MYSQL_ROOT_PASSWORD=ferre
       phpadmin:
         image: phpmyadmin:latest
         ports:
