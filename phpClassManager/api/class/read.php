@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-include_once '../../db/db.php';
-include_once '../../object/class.php';
+include_once './db/db.php';
+include_once './object/class.php';
 
 $database = new Db();
 $db = $database->getConnection();

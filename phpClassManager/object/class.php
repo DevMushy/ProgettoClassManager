@@ -20,7 +20,7 @@ class Classe{
                 " . $this->table_name . "
             ORDER BY id";
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->conn->query($query);
         // execute query
         $stmt->execute();
         return $stmt;
