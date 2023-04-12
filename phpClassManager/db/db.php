@@ -5,7 +5,7 @@ class Db
     private $host = "localhost:3306";
     private $db_name = "school";
     private $username = "root";
-    private $password = "ciava";
+    private $password = "ferre";
     public $conn;
 
     public function getConnection()
