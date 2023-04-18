@@ -27,6 +27,20 @@ class Student{
         $stmt->execute();
         return $stmt;
     }
+    function readById($id)
+    {
+        // query to select all
+        $query = "SELECT id, name, surname, fiscal_code, birthday, id_class
+            FROM 
+                " . $this->table_name . " 
+            WHERE 
+                id = " .$id."";
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        return $stmt;
+    }
 
     function create()
     {

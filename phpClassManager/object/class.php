@@ -26,6 +26,21 @@ class Classe{
         return $stmt;
     }
 
+    function readById($id)
+    {
+        // query to select all
+        $query = "SELECT id, year, section, spec 
+            FROM 
+                " . $this->table_name . " 
+            WHERE 
+                id = " .$id."";
+        // prepare query statement
+        $stmt = $this->conn->query($query);
+        // execute query
+        $stmt->execute();
+        return $stmt;
+    }
+
     function create()
     {
         // query to insert record
