@@ -10,15 +10,15 @@ class Db
 
     public function getConnection()
     {
-        $this->conn = null;
+        $this->$conn = null;
 
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->$conn = new PDO("mysql:host=" . $this->$host . ";dbname=" . $this->$db_name . ";user=" . $this->$username . ";password=" . $this->$password);
         } catch (PDOException $exception) {
             echo "Database connection error: " . $exception->getMessage();
         }
 
-        return $this->conn;
+        return $this->$conn;
     }
 
 }

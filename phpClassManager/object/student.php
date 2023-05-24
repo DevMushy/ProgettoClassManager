@@ -22,7 +22,7 @@ class Student{
                 " . $this->table_name . "
             ORDER BY id";
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
         // execute query
         $stmt->execute();
         return $stmt;
@@ -36,7 +36,7 @@ class Student{
             WHERE 
                 id = " .$id."";
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
         // execute query
         $stmt->execute();
         return $stmt;
@@ -50,7 +50,7 @@ class Student{
             SET
                 name =: name, surname =: surname, fiscal_code =: fiscal_code, birthday =: birthday, id_class =: id_class";
         // prepare query
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
         // sanitize
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->surname = htmlspecialchars(strip_tags($this->surname));
@@ -83,7 +83,7 @@ class Student{
                 id =: id";
 
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
 
         // sanitize
         $this->name = htmlspecialchars(strip_tags($this->name));
@@ -113,7 +113,7 @@ class Student{
         $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
 
         // prepare query
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
 
         // sanitize
         $this->id = htmlspecialchars(strip_tags($this->id));

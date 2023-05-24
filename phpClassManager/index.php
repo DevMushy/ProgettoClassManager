@@ -30,7 +30,7 @@ switch($uri[1]){
                         require __DIR__.'/api/class/create.php';
                     break;
                 case 'DELETE':
-                        $class_id = $URI[2];
+                        $class_id = $uri[2];
                         require __DIR__.'/api/class/delate.php';
                     break;
         }

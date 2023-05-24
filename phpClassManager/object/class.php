@@ -20,7 +20,7 @@ class Classe{
                 " . $this->table_name . "
             ORDER BY id";
         // prepare query statement
-        $stmt = $this->conn->query($query);
+        $stmt = $this->$conn->query($query);
         // execute query
         $stmt->execute();
         return $stmt;
@@ -35,7 +35,7 @@ class Classe{
             WHERE 
                 id = " .$id."";
         // prepare query statement
-        $stmt = $this->conn->query($query);
+        $stmt = $this->$conn->query($query);
         // execute query
         $stmt->execute();
         return $stmt;
@@ -49,7 +49,7 @@ class Classe{
             SET
                 year=:year, section=:section, spec=:spec";
         // prepare query
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
         // sanitize
         $this->year = htmlspecialchars(strip_tags($this->year));
         $this->section = htmlspecialchars(strip_tags($this->section));
@@ -78,7 +78,7 @@ class Classe{
                 id =: id";
 
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
 
         // sanitize
         $this->year = htmlspecialchars(strip_tags($this->year));
@@ -104,7 +104,7 @@ class Classe{
         $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
 
         // prepare query
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->$conn->prepare($query);
 
         // sanitize
         $this->id = htmlspecialchars(strip_tags($this->id));
