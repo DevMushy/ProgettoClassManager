@@ -1,0 +1,22 @@
+CREATE DATABASE school;
+
+USE school;
+
+CREATE TABLE class (
+id bigint(10) NOT NULL AUTO_INCREMENT,
+year int(11) NOT NULL,
+section varchar(1) NOT NULL,
+spec varchar(10) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE  student(
+id bigint(10) NOT NULL AUTO_INCREMENT,
+name varchar(30) NOT NULL,
+surname varchar(30) NOT NULL,
+fiscal_code varchar(16) NOT NULL,
+birthday DATE NOT NULL,
+class_id bigint NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (class_id) REFERENCES class(id)
+)
